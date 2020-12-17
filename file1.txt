@@ -1,3 +1,32 @@
-This is a new file.
+Hiding password in Environment Variable
 
-Making change for testing.
+Inside a python file, run:
+import os
+
+EMAIL_USER = 'your_email_id'
+EMAIL_PASSWORD = 'your_password'
+
+print(EMAIL_USER)
+print(EMAIL_PASSWORD)
+
+Inside terminal 
+nano . bash_profile
+
+add:
+	 
+     export EMAIL_USER=”your_email_id”
+     export EMAIL_PASSWORD="your_password"
+
+     save by clicking ctrl+X and Yes ‘Y’ and press enter.
+
+Restart sublime(text editor)
+
+Now back to python file, change the following:
+
+import os
+
+email = os.environ.get('EMAIL_USER')
+password = os.environ.get('EMAIL_PASSWORD')
+
+print(email)
+print(password)
